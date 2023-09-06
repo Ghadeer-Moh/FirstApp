@@ -11,6 +11,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { MainComponent } from './main/main.component';
 import { IndexComponent } from './Layout/index/index.component';
 import { ErrorNotFoundPageComponent } from './Layout/error-not-found-page/error-not-found-page.component';
+import { BtnComponent } from './btn/btn.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ErrorNotFoundPageComponent } from './Layout/error-not-found-page/error-
     AboutUsComponent,
     MainComponent,
     IndexComponent,
-    ErrorNotFoundPageComponent
+    ErrorNotFoundPageComponent,
+    BtnComponent
   ],
   imports: [
     BrowserModule,
