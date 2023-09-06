@@ -5,7 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './Layout/header/header.component';
 import { FooterComponent } from './Layout/fotter/footer.component';
-import { AboutUsComponent } from './ubout-us/about-us.component';
+import {RouterOutlet} from "@angular/router";
+import { AboutUsComponent } from './about-us/about-us.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { AboutUsComponent } from './ubout-us/about-us.component';
     AboutUsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    // RouterOutlet
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
