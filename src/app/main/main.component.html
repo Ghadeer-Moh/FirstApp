@@ -1,6 +1,14 @@
-<p *ngIf="show">main works!</p>
-<ul *ngFor="let name of names">
-<li>
-  {{ name }}
-</li>
+<!--<p *ngIf="show">main works!</p>-->
+<!--<ul *ngFor="let name of names">-->
+<!--<li>-->
+<!--  {{ name }}-->
+<!--</li>-->
+<!--</ul>-->
+
+<ul [ngSwitch]="switch_exp">
+  <li *ngSwitchCase="'ahmed'">Ahmed</li>
+  <li *ngSwitchCase="'omar'">Omar</li>
+  <li *ngSwitchCase="'mohammed'">Mohammed</li>
+  <li *ngSwitchDefault>No Item founds</li>
+
 </ul>
