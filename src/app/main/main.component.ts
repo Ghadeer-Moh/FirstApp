@@ -9,7 +9,8 @@ import { Component , OnInit} from '@angular/core';
 export class MainComponent implements OnInit{
   show = true;
   names=["ahmed" , "omar" ,"mohammed"];
-  switch_exp="omar"
+  // switch_exp="omar"
+  mycard=true
 
   constructor() {
   }

@@ -5,10 +5,16 @@
 <!--</li>-->
 <!--</ul>-->
 
-<ul [ngSwitch]="switch_exp">
-  <li *ngSwitchCase="'ahmed'">Ahmed</li>
-  <li *ngSwitchCase="'omar'">Omar</li>
-  <li *ngSwitchCase="'mohammed'">Mohammed</li>
-  <li *ngSwitchDefault>No Item founds</li>
+<!--<ul [ngSwitch]="switch_exp">-->
+<!--  <li *ngSwitchCase="'ahmed'">Ahmed</li>-->
+<!--  <li *ngSwitchCase="'omar'">Omar</li>-->
+<!--  <li *ngSwitchCase="'mohammed'">Mohammed</li>-->
+<!--  <li *ngSwitchDefault>No Item founds</li>-->
 
-</ul>
+<!--</ul>-->
+<div [ngClass]="mycard?'card':'card2'">
+  Welcom To Angular Framwork
+</div>
+
+
+

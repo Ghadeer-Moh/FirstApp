@@ -1,0 +1,12 @@
+.card{
+  width: 100%;
+  height: 20px;
+  background: darkred;
+  color: white;
+}
+.card2{
+  width: 100%;
+  height: 20px;
+  background: deepskyblue;
+  color: white;
+}
