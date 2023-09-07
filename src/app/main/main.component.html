@@ -50,13 +50,19 @@
 <!--  Welcom to Angular  Template-->
 <!--</div>-->
 
-<p [appChangeColor]="100+11" [Number]="5" [Equal]="60">main work!!</p>
+<!--<p [appChangeColor]="100+11" [Number]="5" [Equal]="60">main work!!</p>-->
 
+<p>main work!!</p>
+<!--<input type="number" [(ngModel)]="age"> {{age}}-->
 
-
-
-
-
+<!--<button (click)="getAge()">Send A ge</button>-->
+<div [hidden]="show">
+  Welcome to Angular Framework
+</div>
+<form>
+  <input type="text" [disabled]="true" name="name">
+  <button type="submit" [disabled]="false"> Send Values</button>
+</form>
 
 
 

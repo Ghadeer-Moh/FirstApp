@@ -12,7 +12,7 @@ import { MainComponent } from './main/main.component';
 import { IndexComponent } from './Layout/index/index.component';
 import { ErrorNotFoundPageComponent } from './Layout/error-not-found-page/error-not-found-page.component';
 import { BtnComponent } from './btn/btn.component';
-import { ChangeColorDirective } from './change-color.directive';
+
 
 
 @NgModule({
@@ -24,8 +24,7 @@ import { ChangeColorDirective } from './change-color.directive';
     MainComponent,
     IndexComponent,
     ErrorNotFoundPageComponent,
-    BtnComponent,
-    ChangeColorDirective
+    BtnComponent
   ],
   imports: [
     BrowserModule,
