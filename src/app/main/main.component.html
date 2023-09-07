@@ -24,8 +24,11 @@
 <!--{{input}}-->
 
 
-<select [ngModel]="select" *ngFor="let name of names">
- <option>{{name}}</option>
+<select [ngModel]="select" >
+ <ng-container *ngFor="let name of names">
+   <option>{{name}}</option>
+   {{name}}
+ </ng-container>
 </select>
 
 
