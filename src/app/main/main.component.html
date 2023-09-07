@@ -52,21 +52,43 @@
 
 <!--<p [appChangeColor]="100+11" [Number]="5" [Equal]="60">main work!!</p>-->
 
-<p>main work!!</p>
+
 <!--<input type="number" [(ngModel)]="age"> {{age}}-->
 
 <!--<button (click)="getAge()">Send A ge</button>-->
-<div [hidden]="show">
-  Welcome to Angular Framework
-</div>
-<form>
-  <input type="text" [disabled]="true" name="name">
-  <button type="submit" [disabled]="false"> Send Values</button>
+<!--<div [hidden]="show">-->
+<!--  Welcome to Angular Framework-->
+<!--</div>-->
+<!--<form>-->
+<!--  <input type="text" [disabled]="true" name="name">-->
+<!--  <button type="submit" [disabled]="false"> Send Values</button>-->
+<!--</form>-->
+
+<form #myForm="ngForm">
+  <input type="text" [(ngModel)]="lastname" name="lastname">
+  <input type="text" [(ngModel)]="email" name="email">
+  <button type="submit">Send Data</button>
 </form>
+<p>
+ Form submit ? {{myForm.submitted|json}}
+</p>
+<span>The control has been visited</span>
+<p>
+  Form touched ? {{myForm.touched|json}}
+</p>
+<p>
+  Form untouched ? {{myForm.untouched|json}}
+</p>
 
+<p>The Control Changed Value</p>
+<p>
+  Form dirty ? {{myForm.form.dirty|json}}
+</p>
+<p>
+  Form pristine ? {{myForm.form.pristine|json}}
+</p>
 
-
-
-
-
-
+<p>The Control Value is valid</p>
+<p>
+  Form invalid ? {{myForm.form.invalid|json}}
+</p>

@@ -7,6 +7,8 @@ import { Component , OnInit} from '@angular/core';
 })
 
 export class MainComponent implements OnInit{
+  lastname :any
+  email:any
    age='';
     show= false
   constructor() {
