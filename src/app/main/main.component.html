@@ -20,11 +20,13 @@
 <!--  Welcom To Angular Framwork-->
 <!--</div>-->
 
-<input type="text" [(ngModel)]="input">
-{{input}}
+<!--<input type="text" [(ngModel)]="input">-->
+<!--{{input}}-->
 
 
-
+<select [ngModel]="select" *ngFor="let name of names">
+ <option>{{name}}</option>
+</select>
 
 
 

@@ -18,7 +18,8 @@ export class MainComponent implements OnInit{
   //   "height":"50px"
   // }
 
- input = 'Angular Framework';
+ // input = 'Angular Framework';
+  select="Angular"
 
   constructor() {
   }
