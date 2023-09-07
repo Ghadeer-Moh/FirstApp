@@ -10,7 +10,13 @@ export class MainComponent implements OnInit{
   show = true;
   names=["ahmed" , "omar" ,"mohammed"];
   // switch_exp="omar"
-  mycard=true
+  // mycard=true
+  mystyle={
+    "background":"red",
+    "color":'white',
+    "width":"10%",
+    "height":"50px"
+  }
 
   constructor() {
   }
