@@ -7,7 +7,7 @@ import { Component , OnInit} from '@angular/core';
 })
 
 export class MainComponent implements OnInit{
-  show = true;
+  show = false;
   names=["ahmed" , "omar" ,"mohammed","angular"];
   // switch_exp="omar"
   // mycard=true
