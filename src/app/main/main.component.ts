@@ -1,29 +1,30 @@
 import { Component , OnInit} from '@angular/core';
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
 
-export class MainComponent implements OnInit{
-  lastname :any
-  email:any
-   age='';
-    show= false
+export class MainComponent implements OnInit {
+  lastname: any
+  email: any
+  age = '';
+  show = true
+
   constructor() {
   }
+
   ngOnInit() {
   }
+
 // getAge(){
- //     console.log(this.age);
+  //     console.log(this.age);
 // }
+
+
 }
-
-
-
-
-
 
 
 
