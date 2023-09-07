@@ -64,29 +64,29 @@
 <!--  <button type="submit" [disabled]="false"> Send Values</button>-->
 <!--</form>-->
 
-<form #myForm="ngForm">
-<div>
-  <input type="text" [(ngModel)]="lastname" #last="ngModel">
-  <!--  <input type="text" [(ngModel)]="email" name="email">-->
-  <span *ngIf="last.untouched"> this input is required</span>
-</div>
-  <button type="submit">Send Data</button>
-</form>
-<p>input touched ? {{last.touched|json}}</p>
-<p>input untouched ? {{last.untouched|json}}</p>
+<!--<form #myForm="ngForm">-->
+<!--<div>-->
+<!--  <input type="text" [(ngModel)]="lastname" #last="ngModel">-->
+<!--  &lt;!&ndash;  <input type="text" [(ngModel)]="email" name="email">&ndash;&gt;-->
+<!--  <span *ngIf="last.untouched"> this input is required</span>-->
+<!--</div>-->
+<!--  <button type="submit">Send Data</button>-->
+<!--</form>-->
+<!--<p>input touched ? {{last.touched|json}}</p>-->
+<!--<p>input untouched ? {{last.untouched|json}}</p>-->
 
-<p>The Control Changed Value</p>
-<p>
-  Form dirty ? {{last.dirty|json}}
-</p>
-<p>The Control Value is valid</p>
-<p>
-  Form valid ? {{last.valid|json}}
-</p>
-<p>The Control Value is invalid</p>
-<p>
-  Form invalid ? {{last.invalid|json}}
-</p>
+<!--<p>The Control Changed Value</p>-->
+<!--<p>-->
+<!--  Form dirty ? {{last.dirty|json}}-->
+<!--</p>-->
+<!--<p>The Control Value is valid</p>-->
+<!--<p>-->
+<!--  Form valid ? {{last.valid|json}}-->
+<!--</p>-->
+<!--<p>The Control Value is invalid</p>-->
+<!--<p>-->
+<!--  Form invalid ? {{last.invalid|json}}-->
+<!--</p>-->
 
 <!--<p>-->
 <!-- Form submit ? {{myForm.submitted|json}}-->
@@ -111,3 +111,30 @@
 <!--<p>-->
 <!--  Form invalid ? {{myForm.form.invalid|json}}-->
 <!--</p>-->
+
+
+<form #myForm="ngForm" (ngSubmit)="getData()">
+  <input type="text" name="name" [(ngModel)]="name">
+  <button type="submit">Send Value</button>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

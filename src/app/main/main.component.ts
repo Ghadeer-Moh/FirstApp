@@ -8,7 +8,7 @@ import { Component , OnInit} from '@angular/core';
 })
 
 export class MainComponent implements OnInit {
-  lastname: any
+  name: any
   email: any
   age = '';
   show = true
@@ -22,7 +22,9 @@ export class MainComponent implements OnInit {
 // getAge(){
   //     console.log(this.age);
 // }
-
+getData(){
+    console.log(this.name)
+}
 
 }
 
