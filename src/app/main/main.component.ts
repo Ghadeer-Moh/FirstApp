@@ -11,12 +11,14 @@ export class MainComponent implements OnInit{
   names=["ahmed" , "omar" ,"mohammed"];
   // switch_exp="omar"
   // mycard=true
-  mystyle={
-    "background":"red",
-    "color":'white',
-    "width":"10%",
-    "height":"50px"
-  }
+  // mystyle={
+  //   "background":"red",
+  //   "color":'white',
+  //   "width":"10%",
+  //   "height":"50px"
+  // }
+
+ input = 'Angular Framework';
 
   constructor() {
   }
