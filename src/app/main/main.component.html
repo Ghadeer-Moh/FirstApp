@@ -24,13 +24,18 @@
 <!--{{input}}-->
 
 
-<select [ngModel]="select" >
+<select [(ngModel)]="select">
  <ng-container *ngFor="let name of names">
-   <option>{{name}}</option>
-   {{name}}
- </ng-container>
-</select>
+<!--   <ng-container *ngIf="name =='angular'">-->
 
+
+   <option [ngValue]="name" >
+     {{name}}
+   </option>
+ </ng-container>
+<!-- </ng-container>-->
+</select>
+{{select}}
 
 
 

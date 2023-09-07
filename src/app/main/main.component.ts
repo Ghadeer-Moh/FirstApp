@@ -8,7 +8,7 @@ import { Component , OnInit} from '@angular/core';
 
 export class MainComponent implements OnInit{
   show = true;
-  names=["ahmed" , "omar" ,"mohammed"];
+  names=["ahmed" , "omar" ,"mohammed","angular"];
   // switch_exp="omar"
   // mycard=true
   // mystyle={
@@ -19,7 +19,7 @@ export class MainComponent implements OnInit{
   // }
 
  // input = 'Angular Framework';
-  select="Angular"
+  select="omar"
 
   constructor() {
   }
