@@ -60,7 +60,7 @@
 <!--</div>-->
 
 
-<form [formGroup]="myModel">
+<form [formGroup]="myModel" (ngSubmit)="update()">
   <label for="firstname">First Name</label>
   <input type="text"  id="firstname" formControlName="firstname" >
   <br>
@@ -76,7 +76,7 @@
   <input type="text"  id="zipcode" formControlName="zipcode" >
 </div>
   <!--{{firstname.value}}-->
-  <button type="button" (click)="update()"> Update Value</button>
+  <button type="submit" [disabled]="!myModel.valid">Update Value</button>
 </form>
-{{myModel.valid}}
+
 {{myModel.value|json}}

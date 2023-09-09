@@ -1,6 +1,7 @@
 import { Component , OnInit} from '@angular/core';
 import {User} from "./User";
 import { FormBuilder } from "@angular/forms";
+import  { Validators} from "@angular/forms";
 
 
 @Component({
@@ -11,11 +12,11 @@ import { FormBuilder } from "@angular/forms";
 
 export class MainComponent implements OnInit {
   myModel = this.fb.group({
-    firstname:[''],
-    lastname:[''],
+    firstname:['',Validators.required],
+    lastname:['',Validators.required],
     subinfo:this.fb.group({
-      address:[''],
-      zipcode:[''],
+      address:['',Validators.required],
+      zipcode:['',Validators.required],
     })
 
 
