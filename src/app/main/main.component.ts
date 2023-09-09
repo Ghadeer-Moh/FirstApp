@@ -1,4 +1,5 @@
 import { Component , OnInit} from '@angular/core';
+import {User} from "./User";
 
 
 @Component({
@@ -8,44 +9,25 @@ import { Component , OnInit} from '@angular/core';
 })
 
 export class MainComponent implements OnInit {
-  name: any
-  email: any
-  age = '';
-  show = true
+  submitted = false;
+  countries=['eg','ksa','uae','qtr'];
+user = new User('Angular','Angoular@domain.com','male','eg');
 
   constructor() {
   }
-
+  edit(){
+    this.submitted=true;
+  }
+  update(){
+    this.submitted=false;
+  }
   ngOnInit() {
   }
 
-// getAge(){
-  //     console.log(this.age);
-// }
-getData(){
-    console.log(this.name)
-}
+
+
 
 }
 
 
 
-
-
-
-
-
-
-// show = false;
-// names=["ahmed" , "omar" ,"mohammed","angular"];
-// switch_exp="omar"
-// mycard=true
-// mystyle={
-//   "background":"red",
-//   "color":'white',
-//   "width":"10%",
-//   "height":"50px"
-// }
-
-// input = 'Angular Framework';
-//  select="omar"

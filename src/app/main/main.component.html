@@ -1,140 +1,60 @@
-<!--<p *ngIf="show">main works!</p>-->
-<!--<ul *ngFor="let name of names">-->
-<!--<li>-->
-<!--  {{ name }}-->
-<!--</li>-->
-<!--</ul>-->
+<ng-template [ngIf]="submitted">
+     <form #useForm="ngForm" (ngSubmit)="update()">
+       <div class="form-group">
+         <label for="name">Name</label>
+         <input type="text" name="name" id="name" [(ngModel)]="user.name"
+                #name="ngModel" [ngClass]="(user.name+'').length==0?'border border-danger':''" class="form-control" required>
+         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+           Name is required
+         </div>
+       </div>
 
-<!--<ul [ngSwitch]="switch_exp">-->
-<!--  <li *ngSwitchCase="'ahmed'">Ahmed</li>-->
-<!--  <li *ngSwitchCase="'omar'">Omar</li>-->
-<!--  <li *ngSwitchCase="'mohammed'">Mohammed</li>-->
-<!--  <li *ngSwitchDefault>No Item founds</li>-->
-
-<!--</ul>-->
-<!--<div [ngClass]="mycard?'card':'card2'">-->
-<!--  Welcom To Angular Framwork-->
-<!--</div>-->
-
-<!--<div [ngStyle]="mystyle">-->
-<!--  Welcom To Angular Framwork-->
-<!--</div>-->
-
-<!--<input type="text" [(ngModel)]="input">-->
-<!--{{input}}-->
+       <div class="form-group">
+         <label for="email">Email</label>
+         <input type="text" name="email" id="email" [(ngModel)]="user.email" #email="ngModel" [ngClass]="(user.email+'').length==0?'border border-danger':''"
+                class="form-control" required>
+         <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+           Email is required
+         </div>
+       </div>
 
 
-<!--<select [(ngModel)]="select">-->
-<!-- <ng-container *ngFor="let name of names">-->
-<!--&lt;!&ndash;   <ng-container *ngIf="name =='angular'">&ndash;&gt;-->
+       <div class="form-group">
+         <label for="gender">Gender</label>
+         <select [(ngModel)]="user.gender" [ngClass]="(user.gender+'').length==0?'border border-danger':''"
+                 class="form-control" id="gender" #gender="ngModel" name="gender" required>
+           <option [ngValue]="''">Choose </option>
+           <option [ngValue]="'male'">Male </option>
+           <option [ngValue]="'female'">Female </option>
+         </select>
 
+          <div [hidden]="gender.valid || gender.pristine" class="alert alert-danger">
+           Gender is required
+         </div>
+       </div>
 
-<!--   <option [ngValue]="name" >-->
-<!--     {{name}}-->
-<!--   </option>-->
-<!-- </ng-container>-->
-<!--&lt;!&ndash; </ng-container>&ndash;&gt;-->
-<!--</select>-->
-<!--{{select}}-->
+       <div class="form-group">
+         <label for="country">Country</label>
+         <select [(ngModel)]="user.country" [ngClass]="(user.country+'').length==0?'border border-danger':''"
+                 class="form-control" id="country" #country="ngModel" name="country" required>
+           <option [ngValue]="''">Choose </option>
+           <ng-container *ngFor="let country of countries">
+             <option [ngValue]="country">{{country}} </option>
+           </ng-container>
 
-<!--<input type="checkbox" [(ngModel)]="show">-->
-<!--<ng-template [ngIf]="show">-->
-<!--  <div>-->
-<!--    Welcome to Angular 13 Template-->
-<!--  </div>-->
-<!--</ng-template>-->
-<!--<ng-container>-->
-<!--  Container Element in Angular DOM-->
-<!--</ng-container>-->
-<!--<div *ngIf="show">-->
-<!--  Welcom to Angular  Template-->
-<!--</div>-->
+         </select>
+         <div [hidden]="country.valid || country.pristine" class="alert alert-danger">
+           Country is required
+         </div>
+       </div>
+       <btn>Update User</btn>
+     </form>
+</ng-template>
+<div class="container" [hidden]="submitted">
+  <p> <b>Name: </b> {{user.name}}</p>
+  <p> <b>Email: </b> {{user.email}} </p>
+  <p> <b>Gender: </b> {{user.gender}}</p>
+  <p> <b>Country: </b> {{user.country}}</p>
+  <a href="#" (click)="edit()" class="btn btn-primary">Edit</a>
 
-<!--<p [appChangeColor]="100+11" [Number]="5" [Equal]="60">main work!!</p>-->
-
-
-<!--<input type="number" [(ngModel)]="age"> {{age}}-->
-
-<!--<button (click)="getAge()">Send A ge</button>-->
-<!--<div [hidden]="show">-->
-<!--  Welcome to Angular Framework-->
-<!--</div>-->
-<!--<form>-->
-<!--  <input type="text" [disabled]="true" name="name">-->
-<!--  <button type="submit" [disabled]="false"> Send Values</button>-->
-<!--</form>-->
-
-<!--<form #myForm="ngForm">-->
-<!--<div>-->
-<!--  <input type="text" [(ngModel)]="lastname" #last="ngModel">-->
-<!--  &lt;!&ndash;  <input type="text" [(ngModel)]="email" name="email">&ndash;&gt;-->
-<!--  <span *ngIf="last.untouched"> this input is required</span>-->
-<!--</div>-->
-<!--  <button type="submit">Send Data</button>-->
-<!--</form>-->
-<!--<p>input touched ? {{last.touched|json}}</p>-->
-<!--<p>input untouched ? {{last.untouched|json}}</p>-->
-
-<!--<p>The Control Changed Value</p>-->
-<!--<p>-->
-<!--  Form dirty ? {{last.dirty|json}}-->
-<!--</p>-->
-<!--<p>The Control Value is valid</p>-->
-<!--<p>-->
-<!--  Form valid ? {{last.valid|json}}-->
-<!--</p>-->
-<!--<p>The Control Value is invalid</p>-->
-<!--<p>-->
-<!--  Form invalid ? {{last.invalid|json}}-->
-<!--</p>-->
-
-<!--<p>-->
-<!-- Form submit ? {{myForm.submitted|json}}-->
-<!--</p>-->
-<!--<span>The control has been visited</span>-->
-<!--<p>-->
-<!--  Form touched ? {{myForm.touched|json}}-->
-<!--</p>-->
-<!--<p>-->
-<!--  Form untouched ? {{myForm.untouched|json}}-->
-<!--</p>-->
-
-<!--<p>The Control Changed Value</p>-->
-<!--<p>-->
-<!--  Form dirty ? {{myForm.form.dirty|json}}-->
-<!--</p>-->
-<!--<p>-->
-<!--  Form pristine ? {{myForm.form.pristine|json}}-->
-<!--</p>-->
-
-<!--<p>The Control Value is valid</p>-->
-<!--<p>-->
-<!--  Form invalid ? {{myForm.form.invalid|json}}-->
-<!--</p>-->
-
-
-<form #myForm="ngForm" (ngSubmit)="getData()">
-  <input type="text" name="name" [(ngModel)]="name">
-  <button type="submit">Send Value</button>
-
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
