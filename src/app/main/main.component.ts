@@ -13,6 +13,10 @@ export class MainComponent implements OnInit {
   myModel = new FormGroup({
     firstname: new FormControl(''),
      lastname: new FormControl(''),
+    subinfo: new FormGroup({
+      address: new FormControl(''),
+      zipcode: new FormControl(),
+    })
 
   });
 //   submitted = false;
@@ -32,11 +36,17 @@ export class MainComponent implements OnInit {
   }
 
   update(){
+    console.warn(this.myModel.value)
     // this.firstname.setValue('Angular');
-    this.myModel.patchValue({
-      firstname: 'Angular',
-      lastname: 'Framework',
-    })
+    // console.log(this.myModel.value)
+    // this.myModel.patchValue({
+    //   firstname: 'Angular',
+    //   lastname: 'Framework',
+    //   subinfo: {
+    //     address: 'test',
+    //     zipcode:123
+    //   }
+    // })
   }
 
 
