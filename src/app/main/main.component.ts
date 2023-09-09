@@ -2,6 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import {User} from "./User";
 import { FormBuilder } from "@angular/forms";
 import  { Validators} from "@angular/forms";
+import  { FormArray} from "@angular/forms";
 
 
 @Component({
@@ -12,12 +13,15 @@ import  { Validators} from "@angular/forms";
 
 export class MainComponent implements OnInit {
   myModel = this.fb.group({
-    firstname:['',Validators.required],
+    firstname:['default value',Validators.required],
     lastname:['',Validators.required],
     subinfo:this.fb.group({
       address:['',Validators.required],
       zipcode:['',Validators.required],
-    })
+    }),
+    myinfo: this.fb.array([
+      this.fb.control('ssasd',Validators.required)
+    ])
 
 
   })
@@ -33,8 +37,19 @@ export class MainComponent implements OnInit {
 //   countries=['eg','ksa','uae','qtr'];
 // user = new User('Angular','Angoular@domain.com','male','eg');
 
+  addInput(){
+       this.myinfo.push(this.fb.control('test1',Validators.required));
+  }
+  deleteInput(i:number){
+    this.myinfo.removeAt(i);
+
+  }
   constructor(private  fb: FormBuilder) {
+    console.log(this.myModel.get('firstname'));
     // this.firstname.setValue('Angular');
+  }
+  get myinfo(){
+    return this.myModel.get('myinfo') as FormArray;
   }
   // edit(){
   //   this.submitted=true;
@@ -44,6 +59,7 @@ export class MainComponent implements OnInit {
   // }
   ngOnInit() {
   }
+
 
   update()
 {

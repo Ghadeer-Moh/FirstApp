@@ -75,6 +75,15 @@
   <label for="zipcode">Zipcode</label>
   <input type="text"  id="zipcode" formControlName="zipcode" >
 </div>
+  <div formArrayName="myinfo">
+      <h1>Get My Multiple Info</h1>
+    <button type="button" (click)="addInput()">Add New Input</button>
+    <div *ngFor="let info of myinfo.controls; let i=index">
+      <label for="myinfo{{i}}">Info {{i+1}}</label>
+      <input type="text" [formControlName]="i">
+      <button type="button" (click)="deleteInput(i)">Remove</button>
+    </div>
+  </div>
   <!--{{firstname.value}}-->
   <button type="submit" [disabled]="!myModel.valid">Update Value</button>
 </form>
