@@ -1,6 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import {User} from "./User";
-import { FormGroup ,FormControl} from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 
 
 @Component({
@@ -10,20 +10,29 @@ import { FormGroup ,FormControl} from "@angular/forms";
 })
 
 export class MainComponent implements OnInit {
-  myModel = new FormGroup({
-    firstname: new FormControl(''),
-     lastname: new FormControl(''),
-    subinfo: new FormGroup({
-      address: new FormControl(''),
-      zipcode: new FormControl(),
+  myModel = this.fb.group({
+    firstname:[''],
+    lastname:[''],
+    subinfo:this.fb.group({
+      address:[''],
+      zipcode:[''],
     })
 
-  });
+
+  })
+  //   firstname: new FormControl(''),
+  //    lastname: new FormControl(''),
+  //   subinfo: new FormGroup({
+  //     address: new FormControl(''),
+  //     zipcode: new FormControl(),
+  //   })
+  //
+  // });
 //   submitted = false;
 //   countries=['eg','ksa','uae','qtr'];
 // user = new User('Angular','Angoular@domain.com','male','eg');
 
-  constructor() {
+  constructor(private  fb: FormBuilder) {
     // this.firstname.setValue('Angular');
   }
   // edit(){
@@ -35,19 +44,20 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
-  update(){
-    console.warn(this.myModel.value)
-    // this.firstname.setValue('Angular');
-    // console.log(this.myModel.value)
-    // this.myModel.patchValue({
-    //   firstname: 'Angular',
-    //   lastname: 'Framework',
-    //   subinfo: {
-    //     address: 'test',
-    //     zipcode:123
-    //   }
-    // })
-  }
+  update()
+{
+  // console.warn(this.myModel.value)
+  // this.firstname.setValue('Angular');
+  // console.log(this.myModel.value)
+  this.myModel.patchValue({
+    firstname: 'Angular',
+    lastname: 'Framework',
+    subinfo: {
+      address: 'test',
+      zipcode: '123'
+    }
+  });
+}
 
 
 }
