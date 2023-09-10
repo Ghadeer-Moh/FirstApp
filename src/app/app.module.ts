@@ -14,6 +14,7 @@ import { ErrorNotFoundPageComponent } from './Layout/error-not-found-page/error-
 import { BtnComponent } from './btn/btn.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SalePipe } from '../Pipes/sale.pipe';
+import { HttpClientModule} from "@angular/common/http";
 
 
 
@@ -32,10 +33,10 @@ import { SalePipe } from '../Pipes/sale.pipe';
   ],
   imports: [
     BrowserModule,
-    // RouterOutlet
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [IndexComponent]

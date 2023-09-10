@@ -3,6 +3,9 @@ import {User} from "./User";
 import { FormBuilder } from "@angular/forms";
 import  { Validators} from "@angular/forms";
 import  { FormArray} from "@angular/forms";
+import {HttpClient,
+  HttpErrorResponse} from "@angular/common/http";
+
 
 
 @Component({
@@ -12,32 +15,28 @@ import  { FormArray} from "@angular/forms";
 })
 
 export class MainComponent implements OnInit {
-  salevalue:number = 3;
-  // data=['a','b','c']
-  // myDate = new Date();
-  // // myModel:any;
+  mydata:any;
+  message:any = null;
+  constructor(private  http: HttpClient) {
 
-
-
-  constructor(private  fb: FormBuilder) {
 
   }
 
   ngOnInit() {
-   // this.myModel = this.fb.group({
-   //   firstname:['',[
-   //     Validators.required,
-   //    // Validators.minLength(5),
-   //    //  Validators.min(0),
-   //    //  Validators.max(10),
-   //     Validators.email
-   //
-   //   ]],
-   //  });
+    this.message='' ;
+    this.http.get('https://jsonpslaceholder.typicode.com/users')
+      .toPromise()
+      .then(data=>{
+        console.log(data);
+        this.mydata=data;
+      }).catch((e: HttpErrorResponse)=>{
+      // console.log(e.ok)
+      if(!e.ok)
+      {
+        this.message = 'No Data';
+      }
+    });
   }
-  // get firstname(){
-  //   return this.myModel.get('firstname')
-  // }
 
 }
 
