@@ -13,6 +13,7 @@ import { IndexComponent } from './Layout/index/index.component';
 import { ErrorNotFoundPageComponent } from './Layout/error-not-found-page/error-not-found-page.component';
 import { BtnComponent } from './btn/btn.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { SalePipe } from '../Pipes/sale.pipe';
 
 
 
@@ -26,7 +27,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     IndexComponent,
     ErrorNotFoundPageComponent,
     BtnComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    SalePipe
   ],
   imports: [
     BrowserModule,

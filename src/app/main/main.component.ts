@@ -12,6 +12,7 @@ import  { FormArray} from "@angular/forms";
 })
 
 export class MainComponent implements OnInit {
+  salevalue:number = 3;
   // data=['a','b','c']
   // myDate = new Date();
   // // myModel:any;
