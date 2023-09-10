@@ -12,70 +12,29 @@ import  { FormArray} from "@angular/forms";
 })
 
 export class MainComponent implements OnInit {
-  myModel = this.fb.group({
-    firstname:['default value',Validators.required],
-    lastname:['',Validators.required],
-    subinfo:this.fb.group({
-      address:['',Validators.required],
-      zipcode:['',Validators.required],
-    }),
-    myinfo: this.fb.array([
-      this.fb.control('ssasd',Validators.required)
-    ])
+  myModel:any;
 
 
-  })
-  //   firstname: new FormControl(''),
-  //    lastname: new FormControl(''),
-  //   subinfo: new FormGroup({
-  //     address: new FormControl(''),
-  //     zipcode: new FormControl(),
-  //   })
-  //
-  // });
-//   submitted = false;
-//   countries=['eg','ksa','uae','qtr'];
-// user = new User('Angular','Angoular@domain.com','male','eg');
 
-  addInput(){
-       this.myinfo.push(this.fb.control('test1',Validators.required));
-  }
-  deleteInput(i:number){
-    this.myinfo.removeAt(i);
-
-  }
   constructor(private  fb: FormBuilder) {
-    console.log(this.myModel.get('firstname'));
-    // this.firstname.setValue('Angular');
+
   }
-  get myinfo(){
-    return this.myModel.get('myinfo') as FormArray;
-  }
-  // edit(){
-  //   this.submitted=true;
-  // }
-  // update(){
-  //   this.submitted=false;
-  // }
+
   ngOnInit() {
+   this.myModel = this.fb.group({
+     firstname:['',[
+       Validators.required,
+      // Validators.minLength(5),
+      //  Validators.min(0),
+      //  Validators.max(10),
+       Validators.email
+
+     ]],
+    });
   }
-
-
-  update()
-{
-  // console.warn(this.myModel.value)
-  // this.firstname.setValue('Angular');
-  // console.log(this.myModel.value)
-  this.myModel.patchValue({
-    firstname: 'Angular',
-    lastname: 'Framework',
-    subinfo: {
-      address: 'test',
-      zipcode: '123'
-    }
-  });
-}
-
+  get firstname(){
+    return this.myModel.get('firstname')
+  }
 
 }
 
