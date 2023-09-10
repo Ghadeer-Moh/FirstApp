@@ -12,7 +12,9 @@ import  { FormArray} from "@angular/forms";
 })
 
 export class MainComponent implements OnInit {
-  myModel:any;
+  // data=['a','b','c']
+  // myDate = new Date();
+  // // myModel:any;
 
 
 
@@ -21,20 +23,20 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-   this.myModel = this.fb.group({
-     firstname:['',[
-       Validators.required,
-      // Validators.minLength(5),
-      //  Validators.min(0),
-      //  Validators.max(10),
-       Validators.email
-
-     ]],
-    });
+   // this.myModel = this.fb.group({
+   //   firstname:['',[
+   //     Validators.required,
+   //    // Validators.minLength(5),
+   //    //  Validators.min(0),
+   //    //  Validators.max(10),
+   //     Validators.email
+   //
+   //   ]],
+   //  });
   }
-  get firstname(){
-    return this.myModel.get('firstname')
-  }
+  // get firstname(){
+  //   return this.myModel.get('firstname')
+  // }
 
 }
 
