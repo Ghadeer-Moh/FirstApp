@@ -3,7 +3,7 @@ import {User} from "./User";
 import { FormBuilder } from "@angular/forms";
 import  { Validators} from "@angular/forms";
 import  { FormArray} from "@angular/forms";
-import {HttpClient,
+import {HttpClient, 
   HttpErrorResponse} from "@angular/common/http";
 
 
@@ -21,19 +21,26 @@ export class MainComponent implements OnInit {
 
 
   }
-  body ={
 
-    title: 'My Title',
-
-  }
-  url='https://jsonplaceholder.typicode.com/posts/1';
+  url='https://jsonplaceholder.typicode.com/users';
   ngOnInit() {
+
+    const  options ={
+      headers : {
+        'content-type':'application/json; charst=UTF-8','token':'MyToken'
+      },
+      params: {
+        'myUser' :1,
+        'myData' : 'data'
+      }
+    };
+
     this.message=null ;
-    this.http.delete(this.url)
+    this.http.get(this.url,options)
       .subscribe(
         data=>{
           console.log(data);
-        //  this.mydata = data;
+         this.mydata = data;
 
         },
         error => {
