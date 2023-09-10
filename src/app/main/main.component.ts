@@ -21,14 +21,19 @@ export class MainComponent implements OnInit {
 
 
   }
+  body ={
 
+    title: 'My Title',
+
+  }
+  url='https://jsonplaceholder.typicode.com/posts/1';
   ngOnInit() {
-    this.message='' ;
-    this.http.get('https://jsonplaceholder.typicode.com/todos')
+    this.message=null ;
+    this.http.delete(this.url)
       .subscribe(
         data=>{
-          // console.log(data);
-          this.mydata = data;
+          console.log(data);
+        //  this.mydata = data;
 
         },
         error => {
