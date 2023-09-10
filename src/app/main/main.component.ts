@@ -24,18 +24,31 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.message='' ;
-    this.http.get('https://jsonpslaceholder.typicode.com/users')
-      .toPromise()
-      .then(data=>{
-        console.log(data);
-        this.mydata=data;
-      }).catch((e: HttpErrorResponse)=>{
-      // console.log(e.ok)
-      if(!e.ok)
-      {
-        this.message = 'No Data';
-      }
-    });
+    this.http.get('https://jsonplaceholder.typicode.com/todos')
+      .subscribe(
+        data=>{
+          // console.log(data);
+          this.mydata = data;
+
+        },
+        error => {
+         if(!error.ok){
+           this.message ='No Data';
+         }
+
+        }
+      )
+      // .toPromise()
+      // .then(data=>{
+      //   console.log(data);
+      //   this.mydata=data;
+      // }).catch((e: HttpErrorResponse)=>{
+      // // console.log(e.ok)
+      // if(!e.ok)
+      // {
+    //     this.message = 'No Data';
+    //   }
+    // });
   }
 
 }
